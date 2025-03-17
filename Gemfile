@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
+gem "amazing_print"
 gem "bootsnap", require: false
 gem "good_migrations"
 gem "inertia_rails"

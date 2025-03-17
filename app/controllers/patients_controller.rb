@@ -2,6 +2,11 @@
 
 class PatientsController < ApplicationController
   def index
-    render inertia: "Patient"
+    render inertia: "Patients",
+      props: {
+        patients: Patient.all
+      }
+  end
+
   end
 end

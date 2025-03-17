@@ -397,6 +397,7 @@ DEPENDENCIES
   capybara
   capybara-lockstep
   debug
+  dotenv (>= 3.0)
   kamal
   pg (~> 1.1)
   puma (>= 5.0)

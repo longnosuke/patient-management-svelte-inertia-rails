@@ -293,6 +293,10 @@ GEM
     rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
+    rails_semantic_logger (4.17.0)
+      rack
+      railties (>= 5.1)
+      semantic_logger (~> 4.16)
     rainbow (3.1.1)
     rake (13.2.1)
     rdoc (6.12.0)
@@ -357,6 +361,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    semantic_logger (4.16.1)
+      concurrent-ruby (~> 1.0)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
     smart_properties (1.17.0)
@@ -454,6 +460,7 @@ DEPENDENCIES
   rack-canonical-host
   rack-mini-profiler
   rails!
+  rails_semantic_logger
   rspec-rails
   rubocop
   rubocop-capybara

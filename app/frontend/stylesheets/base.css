@@ -6,3 +6,4 @@
   - Default foreground, background, and link colors.
   - Global CSS variables (declared on :root), such as color palette.
 */
+@import "OpenProps UI/main.css";

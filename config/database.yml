@@ -101,3 +101,22 @@ production:
     <<: *primary_production
     database: patient_management_svelte_inertia_rails_production_cable
     migrations_paths: db/cable_migrate
+
+staging:
+  primary: &primary_staging
+    <<: *default
+    database: patient_management_svelte_inertia_rails_staging
+    username: patient_management_svelte_inertia_rails
+    password: <%= ENV["PATIENT_MANAGEMENT_SVELTE_INERTIA_RAILS_DATABASE_PASSWORD"] %>
+  cache:
+    <<: *primary_staging
+    database: patient_management_svelte_inertia_rails_staging_cache
+    migrations_paths: db/cache_migrate
+  queue:
+    <<: *primary_staging
+    database: patient_management_svelte_inertia_rails_staging_queue
+    migrations_paths: db/queue_migrate
+  cable:
+    <<: *primary_staging
+    database: patient_management_svelte_inertia_rails_staging_cable
+    migrations_paths: db/cable_migrate

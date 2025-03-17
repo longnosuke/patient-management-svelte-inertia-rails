@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title><%= content_for(:title) || "Patient Management Svelte Inertia Rails" %></title>
+    <title><%= content_for?(:title) ? strip_tags(yield(:title)) : "Patient Management Svelte Inertia Rails" %></title>
+    <meta name="apple-mobile-web-app-title" content="Patient Management Svelte Inertia Rails">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">

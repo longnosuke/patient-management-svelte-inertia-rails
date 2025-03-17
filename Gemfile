@@ -36,6 +36,7 @@ group :development do
 end
 
 group :test do
+  gem "shoulda-matchers"
   gem "capybara-lockstep", require: false
   gem "selenium-webdriver", require: false
   gem "capybara", require: false

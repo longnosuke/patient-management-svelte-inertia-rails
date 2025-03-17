@@ -21,6 +21,8 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= vite_client_tag %>
+    <%= vite_typescript_tag "inertia" %>
+    <%= inertia_ssr_head %>
     <%= vite_javascript_tag "application", "data-turbo-track": "reload" %>
     <!--
       If using a TypeScript entrypoint file:

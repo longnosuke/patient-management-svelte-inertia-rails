@@ -6,6 +6,7 @@ ruby file: ".ruby-version"
 
 gem "bootsnap", require: false
 gem "good_migrations"
+gem "inertia_rails"
 gem "kamal", require: false
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"

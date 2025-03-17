@@ -78,8 +78,7 @@
   .navbar {
     position: fixed;
     top: 0;
-    left: 250px; /* Push right from sidebar */
-    width: calc(100% - 250px);
+    width: 100%;
     background: white;
     padding: 15px 20px;
     display: flex;

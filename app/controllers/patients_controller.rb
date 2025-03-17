@@ -8,5 +8,10 @@ class PatientsController < ApplicationController
       }
   end
 
+  def show
+    render inertia: "Patient",
+      props: {
+        patient: Patient.find(params[:id])
+      }
   end
 end

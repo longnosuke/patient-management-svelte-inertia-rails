@@ -1,43 +1,49 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
-gem "rack-canonical-host"
+gem "bootsnap", require: false
 gem "good_migrations"
-gem "vite_rails", "~> 3.0"
-gem "rails", github: "rails/rails", branch: "8-0-stable"
+gem "kamal", require: false
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "rack-canonical-host"
+gem "rails", github: "rails/rails", branch: "8-0-stable"
+gem "solid_cable"
 gem "solid_cache"
 gem "solid_queue"
-gem "solid_cable"
-gem "bootsnap", require: false
-gem "kamal", require: false
 gem "thruster", require: false
+gem "tzinfo-data", platforms: %i[windows jruby]
+gem "vite_rails", "~> 3.0"
 
 group :development, :test do
-  gem "factory_bot_rails"
-  gem "dotenv", ">= 3.0"
-  gem "rspec-rails"
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
-  gem "rubocop-rails-omakase", require: false
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
+  gem "dotenv", ">= 3.0"
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
-  gem "rack-mini-profiler"
-  gem "pgcli-rails"
-  gem "letter_opener"
-  gem "erb_lint", require: false
-  gem "bundler-audit", require: false
   gem "annotaterb"
+  gem "bundler-audit", require: false
+  gem "erb_lint", require: false
+  gem "letter_opener"
+  gem "pgcli-rails"
+  gem "rack-mini-profiler"
+  gem "rubocop", require: false
+  gem "rubocop-capybara", require: false
+  gem "rubocop-factory_bot", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
   gem "web-console"
 end
 
 group :test do
-  gem "shoulda-matchers"
+  gem "capybara", require: false
   gem "capybara-lockstep", require: false
   gem "selenium-webdriver", require: false
-  gem "capybara", require: false
+  gem "shoulda-matchers"
 end

@@ -2,10 +2,10 @@ source "https://rubygems.org"
 
 ruby file: ".ruby-version"
 
+gem "vite_rails", "~> 3.0"
 gem "rails", github: "rails/rails", branch: "8-0-stable"
 gem "pg", "~> 1.1"
 gem "puma", ">= 5.0"
-gem "jsbundling-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"

@@ -9,7 +9,6 @@
     <h1 class="heading">Patient Details</h1>
 
     <div class="details-card">
-      <p><strong>ID:</strong> {patient.id}</p>
       <p><strong>Full Name:</strong> {patient.first_name} {patient.last_name}</p>
       <p><strong>Date of Birth:</strong> {patient.date_of_birth}</p>
       <p><strong>Contact:</strong> {patient.contact_number}</p>
@@ -42,17 +41,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .btn {
-    display: inline-block;
-    background: #3b82f6;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-
-  .btn:hover {
-    background: #2563eb;
+  .details-card p {
+    padding: 10px 5px;
   }
 </style>

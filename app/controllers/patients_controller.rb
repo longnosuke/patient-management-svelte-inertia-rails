@@ -2,16 +2,14 @@
 
 class PatientsController < ApplicationController
   def index
-    render inertia: "Patients",
-      props: {
-        patients: Patient.all
-      }
+    render inertia: {
+      patients: Patient.all
+    }
   end
 
   def show
-    render inertia: "Patient",
-      props: {
-        patient: Patient.find(params[:id])
-      }
+    render inertia: {
+      patient: Patient.find(params[:id])
+    }
   end
 end

@@ -1,10 +1,8 @@
 <script>
   import { Link } from "@inertiajs/svelte";
-  import Layout from "../../components/Layout.svelte";
   let { patient } = $props();
 </script>
 
-<Layout title="Patient Page">
   <div class="patient-details">
     <h1 class="heading">Patient Details</h1>
 
@@ -18,7 +16,6 @@
 
     <Link href="/patients" class="btn">Back to List</Link>
   </div>
-</Layout>
 
 <style>
   .patient-details {

@@ -7,3 +7,8 @@
   - Global CSS variables (declared on :root), such as color palette.
 */
 @import "OpenProps UI/main.css";
+@import "OpenProps UI/normalize.css";
+@import "OpenProps UI/theme.css";
+@import "OpenProps UI/utils.css";
+
+@import "OpenProps UI/Button/buttons.css";

@@ -1,0 +1,28 @@
+.btn {
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+  background: #3b82f6;
+}
+
+.btn:hover {
+    background: #2563eb;
+}
+
+.btn--success {
+  background: #86B48E;
+}
+
+.btn--success:hover {
+  background: #15803d;
+}
+
+.btn--alert {
+  background: #F65050;
+}
+
+.btn--alert:hover {
+  background: #dc2626;
+}

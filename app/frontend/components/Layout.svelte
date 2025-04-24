@@ -1,5 +1,20 @@
 <script>
   export let title = "Dashboard";
+  import { page } from "@inertiajs/svelte";
+
+  let showAlert = false;
+  let showNotice = false;
+
+  $: {
+    if ($page.props.flash.alert) {
+      showAlert = true;
+      setTimeout(() => (showAlert = false), 3000);
+    }
+    if ($page.props.flash.notice) {
+      showNotice = true;
+      setTimeout(() => (showNotice = false), 3000);
+    }
+  }
 </script>
 
 <div class="dashboard">
@@ -25,6 +40,21 @@
       </div>
     </header>
 
+    <!-- Flash Messages -->
+    {#if showAlert}
+      <div class="flash-message flash-error" transition:fade>
+        {$page.props.flash.alert}
+        <button class="close-btn" on:click={() => (showAlert = false)}>×</button>
+      </div>
+    {/if}
+
+    {#if showNotice}
+      <div class="flash-message flash-success" transition:fade>
+        {$page.props.flash.notice}
+        <button class="close-btn" on:click={() => (showNotice = false)}>×</button>
+      </div>
+    {/if}
+
     <!-- Scrollable Content Area -->
     <main class="content">
       <slot />
@@ -33,7 +63,6 @@
 </div>
 
 <style>
-  /* Layout Structure */
   .dashboard {
     display: flex;
     height: 100vh;
@@ -98,12 +127,73 @@
     border-radius: 50%;
   }
 
-  /* Scrollable Page Content */
   .content {
     flex-grow: 1;
     padding: 20px;
     margin-top: 60px; /* Adjust for fixed navbar */
     height: calc(100vh - 60px);
     overflow-y: auto; /* Enables scrolling */
+  }
+  .flash-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .flash-success {
+    background-color: #28a745;
+  }
+
+  .flash-error {
+    background-color: #dc3545;
+  }
+
+  .close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  /* Fade transition */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  .flash-message {
+    animation: fade-in 0.3s ease-out forwards, fade-out 0.3s ease-out 2.7s forwards;
   }
 </style>

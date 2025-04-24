@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root "inertia_example#index"
+  root "home#index"
   resources :patients
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
